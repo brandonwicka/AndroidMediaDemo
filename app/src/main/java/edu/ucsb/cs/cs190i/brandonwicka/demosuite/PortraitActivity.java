@@ -16,11 +16,6 @@ public class PortraitActivity extends AppCompatActivity {
 
         String s = getIntent().getStringExtra("Display");
 
-      //  bundle.putString("Display", s);
-       // AudioFragment f = new AudioFragment();
-        //f.setArguments(bundle);
-        //getSupportFragmentManager().beginTransaction().replace(R.id.portrait_layout, f).commit();
-
         if(s.equals("Speechtotext")) {
             Bundle bundle = new Bundle();
             bundle.putString("Display", s);
