@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DemoSuite</string>
+    <string name="speechToText">SPEECH TO TEXT</string>
+    <string name="textToSpeech">TEXT TO SPEECH</string>
+    <string name="audio">AUDIO</string>
+    <string name="video">VIDEO</string>
+    <string name="animation">ANIMATION</string>
 </resources>
