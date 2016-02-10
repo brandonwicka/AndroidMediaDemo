@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:id="@+id/text_speak"
-        android:paddingBottom="20dp"/>
+        android:textSize="16sp"
+        android:paddingBottom="10dp"/>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -27,7 +28,7 @@
         android:layout_centerHorizontal="true"
         android:text="@string/mic_text"
         android:layout_below="@id/img_button"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:id="@+id/speech_input"
         />
 

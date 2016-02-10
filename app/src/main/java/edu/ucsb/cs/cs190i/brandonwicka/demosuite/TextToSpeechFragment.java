@@ -24,6 +24,7 @@ public class TextToSpeechFragment extends Fragment implements View.OnClickListen
 
     TextToSpeech engine;
     EditText editText;
+    private final String TEXT_KEY = "keyvalue";
 
     public TextToSpeechFragment() {
         // Required empty public constructor
@@ -41,7 +42,18 @@ public class TextToSpeechFragment extends Fragment implements View.OnClickListen
         editText.getBackground().setColorFilter(Color.parseColor("#ff69b4"),PorterDuff.Mode.SRC_IN);
         engine = new TextToSpeech(getActivity().getApplicationContext(), this);
 
+        if (savedInstanceState != null) {
+            CharSequence savedText = savedInstanceState.getCharSequence(TEXT_KEY);
+            editText.setText(savedText);
+        }
+
         return view;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putCharSequence(TEXT_KEY, editText.getText().toString());
     }
 
 

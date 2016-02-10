@@ -73,7 +73,7 @@ public class SpeechToTextFragment extends Fragment implements View.OnClickListen
         try {
             startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
         } catch (ActivityNotFoundException e) {
-            Toast.makeText(getActivity().getApplicationContext(), "Not Supported", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(),getString(R.string.error_text), Toast.LENGTH_SHORT).show();
         }
     }
 

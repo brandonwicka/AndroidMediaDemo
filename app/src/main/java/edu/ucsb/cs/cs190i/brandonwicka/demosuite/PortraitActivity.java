@@ -8,11 +8,13 @@ import android.widget.FrameLayout;
 
 public class PortraitActivity extends AppCompatActivity {
 
+    TextToSpeechFragment fragment;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_portrait);
-
 
         String s = getIntent().getStringExtra("Display");
 
@@ -25,9 +27,12 @@ public class PortraitActivity extends AppCompatActivity {
         }
 
         else if(s.equals("Texttospeech")) {
+            if(savedInstanceState != null) {
+                fragment = (TextToSpeechFragment)getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
+            }
             Bundle bundle = new Bundle();
             bundle.putString("Display", s);
-            TextToSpeechFragment fragment = new TextToSpeechFragment();
+            fragment = new TextToSpeechFragment();
             fragment.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.portrait_layout, fragment).commit();
         }
@@ -62,6 +67,14 @@ public class PortraitActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        //Save the fragment's instance
+        getSupportFragmentManager().putFragment(outState, "mContent", fragment);
     }
 
 }
