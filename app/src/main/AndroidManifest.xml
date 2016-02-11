@@ -15,7 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PortraitActivity"></activity>
+        <activity android:name=".PortraitActivity" />
+        <activity android:name=".SpeechTextActivity" />
+        <activity android:name=".TextSpeechActivity" />
+        <activity android:name=".AudioActivity" />
+        <activity android:name=".VideoActivity" />
+        <activity android:name=".AnimationActivity"></activity>
     </application>
 
 </manifest>

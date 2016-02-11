@@ -36,15 +36,21 @@ public class TextToSpeechFragment extends Fragment implements View.OnClickListen
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_text_to_speech, container, false);
-        Button speakButton = (Button) view.findViewById(R.id.speak_button);
-        speakButton.setOnClickListener(this);
         editText = (EditText) view.findViewById(R.id.edit_text);
-        editText.getBackground().setColorFilter(Color.parseColor("#ff69b4"),PorterDuff.Mode.SRC_IN);
-        engine = new TextToSpeech(getActivity().getApplicationContext(), this);
+        editText.getBackground().setColorFilter(Color.parseColor("#ff69b4"), PorterDuff.Mode.SRC_IN);
+
 
         if (savedInstanceState != null) {
-            CharSequence savedText = savedInstanceState.getCharSequence(TEXT_KEY);
-            editText.setText(savedText);
+            String s = savedInstanceState.getString("TEXT_KEY");
+            editText.setText(s);
+            Button speakButton = (Button) view.findViewById(R.id.speak_button);
+            speakButton.setOnClickListener(this);
+            engine = new TextToSpeech(getActivity().getApplicationContext(), this);
+        }
+        else {
+            Button speakButton = (Button) view.findViewById(R.id.speak_button);
+            speakButton.setOnClickListener(this);
+            engine = new TextToSpeech(getActivity().getApplicationContext(), this);
         }
 
         return view;
@@ -53,7 +59,7 @@ public class TextToSpeechFragment extends Fragment implements View.OnClickListen
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putCharSequence(TEXT_KEY, editText.getText().toString());
+        outState.putString(TEXT_KEY, editText.getText().toString());
     }
 
 

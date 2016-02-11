@@ -30,17 +30,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(landscape) {
-                    Bundle bundle = new Bundle();
-                    bundle.putString("Display", "Speechtotext");
+                    //Bundle bundle = new Bundle();
+                    //bundle.putString("Display", "Speechtotext");
                     SpeechToTextFragment fragment = new SpeechToTextFragment();
-                    fragment.setArguments(bundle);
+                    //fragment.setArguments(bundle);
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
 
                 }
 
                 else {
-                    Intent intent = new Intent(MainActivity.this, PortraitActivity.class);
-                    intent.putExtra("Display", "Speechtotext");
+                    Intent intent = new Intent(MainActivity.this, SpeechTextActivity.class);
+                    //intent.putExtra("Display", "Speechtotext");
                     startActivity(intent);
                 }
 
@@ -51,17 +51,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(landscape) {
-                    Bundle bundle = new Bundle();
-                    bundle.putString("Display", "Texttospeech");
                     TextToSpeechFragment fragment = new TextToSpeechFragment();
-                    fragment.setArguments(bundle);
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
-
                 }
 
                 else {
-                    Intent intent = new Intent(MainActivity.this, PortraitActivity.class);
-                    intent.putExtra("Display", "Texttospeech");
+                    Intent intent = new Intent(MainActivity.this, TextSpeechActivity.class);
                     startActivity(intent);
                 }
 
@@ -72,16 +67,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (landscape) {
-                    Bundle bundle = new Bundle();
-                    bundle.putString("Display", "Audio");
                     AudioFragment fragment = new AudioFragment();
-                    fragment.setArguments(bundle);
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
-
                 }
                 else {
-                    Intent intent = new Intent(MainActivity.this, PortraitActivity.class);
-                    intent.putExtra("Display", "Audio");
+                    Intent intent = new Intent(MainActivity.this, AudioActivity.class);
                     startActivity(intent);
                 }
 
@@ -92,16 +82,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (landscape) {
-                    Bundle bundle = new Bundle();
-                    bundle.putString("Display", "Video");
                     VideoFragment fragment = new VideoFragment();
-                    fragment.setArguments(bundle);
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
 
                 }
                 else {
-                    Intent intent = new Intent(MainActivity.this, PortraitActivity.class);
-                    intent.putExtra("Display", "Video");
+                    Intent intent = new Intent(MainActivity.this, VideoActivity.class);
                     startActivity(intent);
                 }
 
@@ -112,17 +98,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(landscape) {
-                    Bundle bundle = new Bundle();
-                    bundle.putString("Display", "Animation");
                     AnimationFragment fragment = new AnimationFragment();
-                    fragment.setArguments(bundle);
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
 
                 }
 
                 else {
-                    Intent intent = new Intent(MainActivity.this, PortraitActivity.class);
-                    intent.putExtra("Display", "Animation");
+                    Intent intent = new Intent(MainActivity.this, AnimationActivity.class);
                     startActivity(intent);
                 }
 
