@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingBottom="6dp"
     android:paddingLeft="6dp"
     android:paddingRight="6dp"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="6dp"
     tools:context="edu.ucsb.cs.cs190i.brandonwicka.demosuite.MainActivity">
 
     <Button
@@ -15,6 +15,8 @@
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:text="@string/speechToText"
+        android:layout_weight="1"
+
         android:id="@+id/speech_to_text_button"
 
         />
@@ -23,6 +25,8 @@
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:text="@string/textToSpeech"
+        android:layout_weight="1"
+
         android:id="@+id/text_to_speech_button"
         android:layout_below="@id/speech_to_text_button"
         />
@@ -31,6 +35,8 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:textSize="25sp"
+        android:layout_weight="1"
+
         android:text="@string/audio"
         android:id="@+id/audio_button"
         android:layout_below="@id/text_to_speech_button"
@@ -41,6 +47,8 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:textSize="25sp"
+        android:layout_weight="1"
+
         android:text="@string/video"
         android:id="@+id/video_button"
         android:layout_below="@id/audio_button"
@@ -52,6 +60,7 @@
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:text="@string/animation"
+        android:layout_weight="1"
         android:id="@+id/animation_button"
         android:layout_below="@id/video_button"
 
