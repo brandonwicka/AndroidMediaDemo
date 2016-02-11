@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     tools:context="edu.ucsb.cs.cs190i.brandonwicka.demosuite.AnimationFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <edu.ucsb.cs.cs190i.brandonwicka.demosuite.BallView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Animation Fragment" />
+        android:id="@+id/ball_view"/>
 
 </FrameLayout>

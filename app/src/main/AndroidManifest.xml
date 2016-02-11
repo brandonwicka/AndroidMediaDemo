@@ -14,13 +14,22 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".PortraitActivity" />
-        <activity android:name=".SpeechTextActivity" />
+
+        <activity
+            android:name=".SpeechTextActivity"
+            android:configChanges="orientation|screenSize" />
         <activity android:name=".TextSpeechActivity" />
         <activity android:name=".AudioActivity" />
-        <activity android:name=".VideoActivity" />
-        <activity android:name=".AnimationActivity"></activity>
+        <activity
+            android:name=".VideoActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".AnimationActivity"
+            android:configChanges="orientation|screenSize">
+
+        </activity>
     </application>
 
 </manifest>

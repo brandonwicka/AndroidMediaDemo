@@ -30,17 +30,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(landscape) {
-                    //Bundle bundle = new Bundle();
-                    //bundle.putString("Display", "Speechtotext");
                     SpeechToTextFragment fragment = new SpeechToTextFragment();
-                    //fragment.setArguments(bundle);
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
-
                 }
-
                 else {
                     Intent intent = new Intent(MainActivity.this, SpeechTextActivity.class);
-                    //intent.putExtra("Display", "Speechtotext");
                     startActivity(intent);
                 }
 
@@ -54,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
                     TextToSpeechFragment fragment = new TextToSpeechFragment();
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
                 }
-
                 else {
                     Intent intent = new Intent(MainActivity.this, TextSpeechActivity.class);
                     startActivity(intent);
@@ -84,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                 if (landscape) {
                     VideoFragment fragment = new VideoFragment();
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
-
                 }
                 else {
                     Intent intent = new Intent(MainActivity.this, VideoActivity.class);
@@ -100,9 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 if(landscape) {
                     AnimationFragment fragment = new AnimationFragment();
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
-
                 }
-
                 else {
                     Intent intent = new Intent(MainActivity.this, AnimationActivity.class);
                     startActivity(intent);
