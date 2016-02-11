@@ -27,8 +27,10 @@ public class SpeechToTextFragment extends Fragment implements View.OnClickListen
 
 
     private final int REQ_CODE_SPEECH_INPUT = 1001;
-    public ImageButton micButton;
-    public TextView textSpeech;
+    private final String TEXT_KEY = "keyvalue";
+    ArrayList<String> a = new ArrayList<>();
+    ImageButton micButton;
+    TextView textSpeech;
 
 
     public SpeechToTextFragment() {
@@ -40,9 +42,18 @@ public class SpeechToTextFragment extends Fragment implements View.OnClickListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_speech_to_text, container, false);
-        micButton = (ImageButton) view.findViewById(R.id.img_button);
-        micButton.setOnClickListener(this);
         textSpeech = (TextView) view.findViewById(R.id.text_speak);
+
+        if (savedInstanceState != null) {
+            String s = savedInstanceState.getString("TEXT_KEY");
+            textSpeech.setText(s);
+            micButton = (ImageButton) view.findViewById(R.id.img_button);
+            micButton.setOnClickListener(this);
+        }
+        else {
+            micButton = (ImageButton) view.findViewById(R.id.img_button);
+            micButton.setOnClickListener(this);
+        }
 
         return view;
     }
@@ -57,6 +68,7 @@ public class SpeechToTextFragment extends Fragment implements View.OnClickListen
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     textSpeech.setText(result.get(0));
+                    a.add(textSpeech.getText().toString());
                 }
                 break;
             }
@@ -75,6 +87,20 @@ public class SpeechToTextFragment extends Fragment implements View.OnClickListen
         } catch (ActivityNotFoundException e) {
             Toast.makeText(getActivity().getApplicationContext(),getString(R.string.error_text), Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (a.isEmpty()) {
+            textSpeech.setText("");
+            //outState.putString(TEXT_KEY, textSpeech.getText().toString());
+        } else {
+            textSpeech.setText(a.get(0));
+            outState.putString(TEXT_KEY, textSpeech.getText().toString());
+            Toast.makeText(getContext(), "This is saving" + textSpeech.getText().toString(), Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 

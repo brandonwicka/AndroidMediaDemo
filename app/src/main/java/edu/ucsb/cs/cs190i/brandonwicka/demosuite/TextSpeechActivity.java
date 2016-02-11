@@ -9,6 +9,7 @@ public class TextSpeechActivity extends AppCompatActivity {
 
 
     TextToSpeechFragment fragment;
+    private final String FRAG_KEY = "unique_frag";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +17,7 @@ public class TextSpeechActivity extends AppCompatActivity {
         setContentView(R.layout.activity_text_speech);
 
         if(savedInstanceState != null) {
-            fragment = (TextToSpeechFragment)getSupportFragmentManager().getFragment(savedInstanceState,"mcontent");
+            fragment = (TextToSpeechFragment)getSupportFragmentManager().getFragment(savedInstanceState,FRAG_KEY);
 
         }
         else {
@@ -30,7 +31,7 @@ public class TextSpeechActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        getSupportFragmentManager().putFragment(outState, "mcontent", fragment);
+        getSupportFragmentManager().putFragment(outState, FRAG_KEY, fragment);
     }
 
 
