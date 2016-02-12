@@ -26,8 +26,7 @@
             android:name=".VideoActivity"
             android:configChanges="orientation|screenSize" />
         <activity
-            android:name=".AnimationActivity"
-            android:configChanges="orientation|screenSize">
+            android:name=".AnimationActivity">
 
         </activity>
     </application>

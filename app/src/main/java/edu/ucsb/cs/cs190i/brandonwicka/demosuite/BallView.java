@@ -67,4 +67,15 @@ public class BallView extends View {
     }
 
 
+    public int getSpeed() {
+
+        return Vx;
+    }
+
+    public void setSpeed(int n) {
+        Vx = n;
+        Vy = n;
+    }
+
+
 }
